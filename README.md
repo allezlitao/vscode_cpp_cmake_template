@@ -27,8 +27,8 @@ VSCode必要的插件：
 + CMake Tools Helper
 + GitLens
 
-
 项目模板的项目树：
+
 ```shell
 .
 └── .vscode
