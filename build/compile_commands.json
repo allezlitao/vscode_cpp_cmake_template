@@ -1,7 +1,7 @@
 [
 {
   "directory": "/home/undefined/Documents/EditingPrograms/vscode_cpp_cmake_template/build",
-  "command": "/usr/bin/g++-7   -I/usr/local/include/opencv -I/usr/local/include/opencv2  -O3 -DNDEBUG   -std=gnu++14 -o CMakeFiles/demo.dir/main.cpp.o -c /home/undefined/Documents/EditingPrograms/vscode_cpp_cmake_template/main.cpp",
+  "command": "/usr/bin/g++-7   -I/usr/include/GL -isystem /usr/local/include -isystem /usr/local/include/opencv  -g   -std=gnu++14 -o CMakeFiles/demo.dir/main.cpp.o -c /home/undefined/Documents/EditingPrograms/vscode_cpp_cmake_template/main.cpp",
   "file": "/home/undefined/Documents/EditingPrograms/vscode_cpp_cmake_template/main.cpp"
 }
 ]

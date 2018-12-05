@@ -5,8 +5,7 @@
             "includePath": [
                 "/usr/include",
                 "/usr/local/include",
-                "${workspaceFolder}",
-                "${workspaceFloder}/Headers"
+                "${workspaceFolder}"
             ],
             "defines": [],
             "intelliSenseMode": "clang-x64",
@@ -33,9 +32,9 @@
                 "/usr/include",
                 "/usr/local/include",
                 "${workspaceFolder}",
-                "${workspaceFolder}/Headers",
                 "/usr/include/linux",
-                "/usr/include/c++/7/tr1"
+                "/usr/include/c++/7/tr1",
+                "/home/azmddy/Downloads/boost_1_68_0"
             ],
             "defines": [],
             "intelliSenseMode": "gcc-x64",
@@ -44,9 +43,9 @@
                     "/usr/include",
                     "/usr/local/include",
                     "${workspaceFolder}",
-                    "${workspaceFolder}/Headers"
+                    "/home/azmddy/Downloads/boost_1_68_0"
                 ],
-                "limitSymbolsToIncludedHeaders": true,
+                "limitSymbolsToIncludedHeaders": false,
                 "databaseFilename": ""
             },
             "compilerPath": "/usr/bin/gcc",
@@ -57,8 +56,7 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}",
-                "${workspaceFolder}/Headers"
+                "${workspaceFolder}"
             ],
             "defines": [
                 "_DEBUG",
@@ -69,8 +67,7 @@
             "intelliSenseMode": "clang-x64",
             "browse": {
                 "path": [
-                    "${workspaceFolder}",
-                    "${workspaceFolder}/Headers"
+                    "${workspaceFolder}"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ""
