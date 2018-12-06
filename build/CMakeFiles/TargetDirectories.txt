@@ -1,3 +1,0 @@
-/home/undefined/Documents/EditingPrograms/vscode_cpp_cmake_template/build/CMakeFiles/rebuild_cache.dir
-/home/undefined/Documents/EditingPrograms/vscode_cpp_cmake_template/build/CMakeFiles/edit_cache.dir
-/home/undefined/Documents/EditingPrograms/vscode_cpp_cmake_template/build/CMakeFiles/demo.dir
