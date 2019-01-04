@@ -57,12 +57,14 @@ VSCode必要的插件：
 `Build: [all]` ：表明可以构建所有可用的目标，点击`Build`你将会构建所有可用的目标；
 `Debug demo`： 点击`Debug`，你将运行调试demo；
 
-这里的项目使用三个库，分别是Boost,OpenCV,OpenGL，有关它们的安装配置教程如下：
+这里的项目支持四个第三方库，分别是Boost,OpenCV,OpenGL，ZeroMQ，有关它们的安装配置教程如下：
 
 Boost安装使用方法：[https://blog.csdn.net/qq_34347375/article/details/83589704](https://blog.csdn.net/qq_34347375/article/details/83589704)
 
 OpenCV安装使用方法：[https://blog.csdn.net/qq_34347375/article/details/81137142](https://blog.csdn.net/qq_34347375/article/details/81137142)
 
 OpenGL安装使用方法：[https://blog.csdn.net/qq_34347375/article/details/83575897](https://blog.csdn.net/qq_34347375/article/details/83575897)
+
+ZeroMQ安装使用方法：[https://blog.csdn.net/qq_34347375/article/details/85790185](https://blog.csdn.net/qq_34347375/article/details/85790185)
 
  [1]: http://static.zybuluo.com/azmddy/db5wyqz0woxx0ndnk2wqx003/image_1cttvicc233u1m1q3m912uq1vha19.png

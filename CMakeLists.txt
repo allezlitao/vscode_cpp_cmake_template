@@ -1,5 +1,5 @@
 # CMake 最低的版本要求
-cmake_minimum_required(VERSION 3.12.0)
+cmake_minimum_required(VERSION 3.10.0)
 
 # 定义项目名称变量PROJECT_NAME, 默认值为demo
 set(PROJECT_NAME demo)
@@ -60,4 +60,19 @@ include_directories(${OPENGL_INC_DIR})
 link_directories(${OPENGL_LDFLAGS})
 # 链接OpenGL库文件
 target_link_libraries(${PROJECT_NAME} ${OPENGL_LIBS})
+###############################################################################################################
+
+############################################# ZMQ #############################################################
+# ZMQ 头文件路径保存在 ZMQ_INC_DIR 变量
+set(ZMQ_INC_DIR /usr/local/include)
+# ZMQ 链接库路径保存在 ZMQ_LDFLAGS 变量
+set(ZMQ_LDFLAGS /usr/local/lib)
+# ZMQ 链接库名称保存在 ZMQ_LIBS 变量
+set(ZMQ_LIBS zmq)
+# ZMQ 头文件目录
+include_directories(${ZMQ_INC_DIR})
+# ZMQ 库文件目录
+link_directories(${ZMQ_LDFLAGS})
+# 链接 ZMQ 库文件
+target_link_libraries(${PROJECT_NAME} ${ZMQ_LIBS})
 ###############################################################################################################
