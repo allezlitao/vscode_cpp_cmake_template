@@ -38,7 +38,7 @@ target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS})
 
 ############################################## Boost #########################################################
 # 查找 Boost_1_68_0的特定的库
-find_package(Boost 1.68.0 REQUIRED COMPONENTS regex)
+find_package(Boost REQUIRED COMPONENTS regex)
 # 包含Boost头文件目录
 include_directories(${Boost_INCLUDE_DIRS})
 message("Boost_INCLUDE_DIRS: ${Boost_INCLUDE_DIRS}")
