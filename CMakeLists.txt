@@ -5,74 +5,79 @@ cmake_minimum_required(VERSION 3.10.0)
 set(PROJECT_NAME demo)
 
 # 项目名称以及版本
-project(${PROJECT_NAME} VERSION 0.1.0)
+project(${PROJECT_NAME} VERSION 0.0.0)
 
-# 查找当前目录下的所有源文件
-# 并将名称保存到 DIR_SRCS 变量
-aux_source_directory(. DIR_SRCS)
 
+################################################ Configuration ###################################################
 # 设置C++的版本
 set(CMAKE_CXX_STANDARD 14)
+
+# 指定模式
+set(CMAKE_BUILD_TYPE "Debug")
+set(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g -ggdb")
+set(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -O3 -Wall")
+
+###########################################################################################################
+
+############################################## Tools ######################################################
+
+# 当前目录下除了测试文件外所有的源文件的名称保存到 DIR_SRCS 变量
+set(DIR_SRCS main.cpp)
+
+# 包含头文件目录
+include_directories(Basic)
+include_directories(ThirdParty/include)
+
+# 第三方链接库的目录
+link_directories(ThirdParty/lib)
+
+# 需要用到的第三方库
+set(USED_TOOLS_LIB boost_regex)
+
+# 添加子目录(工作目录的次一级子目录)
+add_subdirectory(Basic)
 
 # 指定生成目标
 add_executable(${PROJECT_NAME} ${DIR_SRCS})
 
-# 链接那些不是第三方库的库文件
-target_link_libraries(${PROJECT_NAME} pthread)
+# 链接第三方库
+target_link_libraries(${PROJECT_NAME} ${USED_TOOLS_LIB})
 
-##############################################################################################################
-###################################     有关第三方库的使用     ###############################################
+# 链接项目产生的库
+# target_link_libraries(${PROJECT_NAME} )
 
-############################################## OpenCV ########################################################
-# 设置OpenCVModule的路径
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "/home/undefined/Downloads/opencv-3.4.1/build")
-# 查找 OpenCV3.4.1的头文件和库文件路径以及库文件
-find_package(OpenCV 3.4.1 REQUIRED)
-# 包含OpenCV头文件目录
-include_directories(${OpenCV_INCLUDE_DIRS})
-message("OpenCV_INCLUDE_DIRS: ${OpenCV_INCLUDE_DIRS}")
-message("OpenCV_LIBS: ${OpenCV_LIBS}")
-# 链接OpenCV库文件
-target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS})
-##############################################################################################################
+#############################################################################################################
 
-############################################## Boost #########################################################
-# 查找 Boost_1_68_0的特定的库
-find_package(Boost 1.68.0 REQUIRED COMPONENTS regex)
-# 包含Boost头文件目录
-include_directories(${Boost_INCLUDE_DIRS})
-message("Boost_INCLUDE_DIRS: ${Boost_INCLUDE_DIRS}")
-message("Boost_LIBRARIES: ${Boost_LIBRARIES}")
-# 链接Boost库文件
-target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES})
-##############################################################################################################
+################################################### Test ####################################################
 
-############################################## OpenGL ########################################################
-# opengl 头文件路径保存在 OPENGL_INC_DIR 变量
-set(OPENGL_INC_DIR /usr/local/include /usr/include /usr/include/GL)
-# opengl 链接库路径保存在 OPENGL_LDFLAGS 变量
-set(OPENGL_LDFLAGS /usr/local/lib /usr/lib64)
-# opengl 链接库名称保存在 OPENGL_LIBS 变量
-set(OPENGL_LIBS GL GLU glut GLEW gltools glfw3 X11 Xxf86vm Xrandr pthread Xi dl Xinerama Xcursor m)
-# OpenGL头文件目录
-include_directories(${OPENGL_INC_DIR})
-# OpenGL库文件目录
-link_directories(${OPENGL_LDFLAGS})
-# 链接OpenGL库文件
-target_link_libraries(${PROJECT_NAME} ${OPENGL_LIBS})
-###############################################################################################################
+# 包含测试部分的头文件目录
+include_directories(Test)
 
-############################################# ZMQ #############################################################
-# ZMQ 头文件路径保存在 ZMQ_INC_DIR 变量
-set(ZMQ_INC_DIR /usr/local/include)
-# ZMQ 链接库路径保存在 ZMQ_LDFLAGS 变量
-set(ZMQ_LDFLAGS /usr/local/lib)
-# ZMQ 链接库名称保存在 ZMQ_LIBS 变量
-set(ZMQ_LIBS zmq)
-# ZMQ 头文件目录
-include_directories(${ZMQ_INC_DIR})
-# ZMQ 库文件目录
-link_directories(${ZMQ_LDFLAGS})
-# 链接 ZMQ 库文件
-target_link_libraries(${PROJECT_NAME} ${ZMQ_LIBS})
-###############################################################################################################
+# 添加子目录(次一级的测试目录)
+add_subdirectory(Test) # 不用修改
+
+# # 搜索当前工作目录下的所有源文件，并将这些源文件存在 DIR_SRCS 变量中
+# aux_source_directory(. DIR_SRCS)
+
+# 需要用到的第三方库
+set(USED_TEST_LIB 
+        gtest_main
+        gtest
+        pthread
+        tools_test
+    )
+
+# 测试用例
+set(TEST_CASES 
+    test_
+)
+
+# 生成测试目标
+add_executable(test_ test_.cpp)
+
+# 链接第三方库
+target_link_libraries(test_ ${USED_TEST_LIB})
+
+###################################################################################################################
+
+

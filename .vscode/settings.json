@@ -16,5 +16,6 @@
     },
     "cmake.configureOnOpen": true,
     "cmake-tools-helper.cmake_download_path": "/home/undefined/.vscode/extensions/maddouri.cmake-tools-helper-0.2.1/cmake_download",
-    "explorer.confirmDelete": false
+    "explorer.confirmDelete": false,
+    "git.ignoreLimitWarning": true
 }
