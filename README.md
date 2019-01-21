@@ -1,6 +1,6 @@
-# Tools (工具集)
+# Project Template
 
-> 一些工具的集合；
+> CMake的项目模板
 
 ## 项目结构说明
 
