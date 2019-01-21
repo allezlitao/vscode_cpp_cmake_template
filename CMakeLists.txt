@@ -40,6 +40,7 @@ add_subdirectory(Basic)
 # 指定生成目标
 add_executable(${PROJECT_NAME} ${DIR_SRCS})
 
+<<<<<<< HEAD
 # 链接第三方库
 target_link_libraries(${PROJECT_NAME} ${USED_TOOLS_LIB})
 
@@ -79,5 +80,3 @@ add_executable(test_ test_.cpp)
 target_link_libraries(test_ ${USED_TEST_LIB})
 
 ###################################################################################################################
-
-
