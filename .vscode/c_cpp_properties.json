@@ -33,8 +33,7 @@
                 "/usr/local/include",
                 "${workspaceFolder}",
                 "/usr/include/linux",
-                "/usr/include/c++/7/tr1",
-                "/home/azmddy/Downloads/boost_1_68_0"
+                "/usr/include/c++/7/tr1"
             ],
             "defines": [],
             "intelliSenseMode": "gcc-x64",
@@ -42,8 +41,7 @@
                 "path": [
                     "/usr/include",
                     "/usr/local/include",
-                    "${workspaceFolder}",
-                    "/home/azmddy/Downloads/boost_1_68_0"
+                    "${workspaceFolder}"
                 ],
                 "limitSymbolsToIncludedHeaders": false,
                 "databaseFilename": ""
@@ -51,7 +49,8 @@
             "compilerPath": "/usr/bin/gcc",
             "cStandard": "c11",
             "cppStandard": "c++17",
-            "compileCommands": "${workspaceFolder}/build/compile_commands.json"
+            "compileCommands": "${workspaceFolder}/build/compile_commands.json",
+            "configurationProvider": "vector-of-bool.cmake-tools"
         },
         {
             "name": "Win32",
@@ -64,7 +63,7 @@
                 "_UNICODE"
             ],
             "compilerPath": "C:\\MinGW\\bin\\gcc.exe",
-            "intelliSenseMode": "clang-x64",
+            "intelliSenseMode": "msvc-x64",
             "browse": {
                 "path": [
                     "${workspaceFolder}"
