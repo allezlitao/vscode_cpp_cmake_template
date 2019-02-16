@@ -1,5 +1,4 @@
 #include <iostream>
-#include "gtest/gtest.h"
 #include "test.hpp"
 using namespace ToolsTest;
 
@@ -7,7 +6,6 @@ using namespace ToolsTest;
 
 int main(int argc, char **argv) {
 
-    testing::InitGoogleTest(&argc, argv);
 
 #ifdef T_
 
@@ -17,5 +15,5 @@ int main(int argc, char **argv) {
 
 
     std::cout << "=======================================================================" << std::endl;
-    return RUN_ALL_TESTS();
+    return 0;
 }

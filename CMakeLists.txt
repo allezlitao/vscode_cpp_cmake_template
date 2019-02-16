@@ -32,7 +32,7 @@ include_directories(ThirdParty/include)
 link_directories(ThirdParty/lib)
 
 # 需要用到的第三方库
-set(USED_TOOLS_LIB boost_regex)
+set(USED_TOOLS_LIB )
 
 # 添加子目录(工作目录的次一级子目录)
 add_subdirectory(Basic)
@@ -60,12 +60,7 @@ add_subdirectory(Test) # 不用修改
 # aux_source_directory(. DIR_SRCS)
 
 # 需要用到的第三方库
-set(USED_TEST_LIB 
-        gtest_main
-        gtest
-        pthread
-        tools_test
-    )
+set(USED_TEST_LIB )
 
 # 测试用例
 set(TEST_CASES 
