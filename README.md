@@ -36,4 +36,4 @@
 
 当构建整个文件的时候，会同时构建项目以及测试；
 
-**至此，不打算继续维护它了，它的进一步开发在`Tools`这个项目中[https://github.com/AZMDDY/Tools.git](https://github.com/AZMDDY/Tools.git)**
+至此，不打算继续维护它了，它的进一步开发在`Tools`这个项目中[https://github.com/AZMDDY/Tools.git](https://github.com/AZMDDY/Tools.git)
