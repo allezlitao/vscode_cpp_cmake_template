@@ -1,6 +1,6 @@
 # Project Template
 
-> CMake的项目模板
+> CMake的项目模板, 支持boost1.68, gtest, opencv这些第三方库;
 
 ## 项目结构说明
 
@@ -14,7 +14,6 @@
 ├── main.cpp
 ├── README.md
 ├── Test
-├── test_.cpp
 └── ThirdParty
 
 ```
@@ -31,14 +30,10 @@
 
 + README.md: 是关于这个项目的介绍；
 
-+ Test文件夹： 是用于存放测试内容的源文件，这些源文件的特征是拥有前缀`test_`,但源文件中的类或者函数并没有此特征，同时这些测试内容都包含在命名空间`ToolsTest`中，只有当测试完成后，才能将这些源码移植到项目中，这些测试内容不能在项目中使用，它们都只能用于工作目录下专门用于测试的用例。
++ Test文件夹： 是用于存放测试内容的源文件，只需要在CMakeLists.txt添加源文件（去掉后缀），如果需要链接第三方库，也需要自己添加。
 
-+ ThirdParty文件夹： 存放着项目引用的第三方库，目的是实现与平台的低耦合。
++ ThirdParty文件夹： 存放着项目引用的第三方库（boost, opencv, gtest），目的是实现与平台的低耦合。
 
 当构建整个文件的时候，会同时构建项目以及测试；
 
-## 测试说明
-
-所有的测试内容都在Test文件夹中，Test文件夹中的文件夹中存放这独立的需要被测试的功能代码，test.hpp/test.cpp中声明和定义用于测试功能的函数，这些函数将在test_.cpp文件中被用于测试;
-
-在test_.cpp中使用条件编译去分离各个功能的测试函数;
+**至此，不打算继续维护它了，它的进一步开发在`Tools`这个项目中[https://github.com/AZMDDY/Tools.git](https://github.com/AZMDDY/Tools.git)**

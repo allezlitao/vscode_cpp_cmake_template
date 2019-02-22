@@ -1,5 +1,16 @@
-# 添加子目录
-# add_subdirectory()
-# include_directories()
-add_library(tools_test test.cpp)
-# target_link_libraries(tools_test )
+set(TestFiles 
+    T
+)
+
+set(UsedLib
+  glog
+  gtest
+  pthread
+)
+
+foreach(TestFile ${TestFiles})
+
+add_executable(${TestFile} "${TestFile}.cpp")
+target_link_libraries(${TestFile} ${UsedLib})
+
+endforeach()
